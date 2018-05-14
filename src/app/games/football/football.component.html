@@ -1,10 +1,36 @@
-<div class="football-info">
-  <div class="football-header">
-    <span>Home</span>
-    <span>Away</span>
+<div class="football-info" *ngIf="matchInfo && winner && seedMatches">
+  <h1>{{ header }} | {{ setRounds }}</h1>
+  <div>
+    <span>Winner:</span>
+    <span> {{ winner?.name }} </span>
   </div>
-  <div class="football-item">
-    <span>{{ matchInfo.home.score }}</span>
-    <span>{{ matchInfo.away.score }}</span>
+  <div>
+    <div class="football-header">
+      <span>Team 1</span>
+      <span>Team 2</span>
+    </div>
+    <div class="football-item">
+      <span>{{ seedMatches[0].winner.name }}</span>
+      <span>{{ seedMatches[1].winner.name }}</span>
+    </div>
   </div>
+  <div>
+    <div class="football-header">
+      <span>Home</span>
+      <span>Away</span>
+    </div>
+    <div class="football-item">
+      <span>{{ matchInfo.home.score }}</span>
+      <span>{{ matchInfo.away.score }}</span>
+    </div>
+  </div>
+</div>
+
+<div *ngFor="let match of seedMatches">
+  <sf-football
+    [matchInfo]="match.matchInfo"
+    [seedMatches]="match.seedMatches"
+    [winner]="match.winner"
+    [index]="getIndex">
+  </sf-football>
 </div>

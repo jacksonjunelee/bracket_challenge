@@ -1,3 +1,18 @@
-<p>
-  bracket works!
-</p>
+<div class="sport-container">
+  <div *ngIf="sport === 'soccer'">
+    <sf-soccer
+      [matchInfo]="matchInfo.matchInfo"
+      [seedMatches]="matchInfo.seedMatches"
+      [winner]="matchInfo.winner"
+      [index]="index">
+    </sf-soccer>
+  </div>
+  <div *ngIf="sport === 'football'">
+    <sf-football
+      [matchInfo]="matchInfo.matchInfo"
+      [seedMatches]="matchInfo.seedMatches"
+      [winner]="matchInfo.winner"
+      [index]="index">
+    </sf-football>
+  </div>
+</div>
