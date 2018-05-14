@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BracketComponent } from './bracket.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('BracketComponent', () => {
   let component: BracketComponent;
@@ -8,7 +9,10 @@ describe('BracketComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BracketComponent ]
+      declarations: [ BracketComponent ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ]
     })
     .compileComponents();
   }));

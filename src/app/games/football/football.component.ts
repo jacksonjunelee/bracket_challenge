@@ -17,7 +17,4 @@ export class FootballComponent extends MatchBase implements OnInit {
   constructor() { super() }
 
   ngOnInit() {}
-
-
-
 }
