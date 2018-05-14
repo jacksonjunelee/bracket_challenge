@@ -26,11 +26,13 @@
   </div>
 </div>
 
-<div *ngFor="let match of seedMatches">
-  <sf-soccer
-    [matchInfo]="match.matchInfo"
-    [seedMatches]="match.seedMatches"
-    [winner]="match.winner"
-    [index]="getIndex">
-  </sf-soccer>
+<div *ngIf="matchInfo && winner && seedMatches">
+  <div *ngFor="let match of seedMatches">
+    <sf-soccer
+      [matchInfo]="match.matchInfo"
+      [seedMatches]="match.seedMatches"
+      [winner]="match.winner"
+      [index]="getIndex">
+    </sf-soccer>
+  </div>
 </div>
